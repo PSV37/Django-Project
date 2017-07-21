@@ -1,0 +1,113 @@
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<style>
+.label,.glyphicon { margin-right:5px; }
+
+.navbar-default
+{
+    background-color: darkseagreen;
+}
+body{
+    background-color: darkgoldenrod;
+}
+</style>
+
+
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.jquery2dotnet.com"><b>Industry</b></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'admin' %}"><span class="glyphicon glyphicon-home"></span>Dashboard</a></li>
+                <li><a href="{% url 'M-add' %}"><span class="glyphicon glyphicon-calendar"></span>AddMovies</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                    class="glyphicon glyphicon-list-alt"></span>DetailMovies <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'Mdetail' %}">DetailMovies</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">View All Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                    class="glyphicon glyphicon-search"></span>Search <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="min-width: 300px;">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="navbar-form navbar-left" role="search">
+
+                                    <div class="input-group">
+                                         {% csrf_token %}
+                                        <input type="text" class="form-control" placeholder="Search" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="button">
+                                                Go!</button>
+                                        </span>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                    class="glyphicon glyphicon-comment"></span>Chats <span class="label label-primary">42</span>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="label label-warning">7:00 AM</span>Hi :)</a></li>
+                        <li><a href="#"><span class="label label-warning">8:00 AM</span>How are you?</a></li>
+                        <li><a href="#"><span class="label label-warning">9:00 AM</span>What are you doing?</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="text-center">View All</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                    class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Favourites Snippet</a></li>
+                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Email marketing</a></li>
+                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
+                            design</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="text-center">View All</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                    class="glyphicon glyphicon-user"></span>Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'index' %}"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+{% block a %}
+
+{% endblock %}

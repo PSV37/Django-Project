@@ -1,0 +1,36 @@
+{% extends 'marathi/Admin.html' %}
+
+{% block a %}
+<div class="container">
+<h1>Movies Detail</h1>
+
+ <div class="table-responsive">  
+      
+  <table class="table">
+
+    <thead>
+
+     <tr>
+     	<th>Movie Image</th>
+     	<th>Movie Name</th>
+     	<th>Movie Producer</th>
+     	<th>Movie Director</th>
+     </tr>
+    </thead>
+    <tbody>
+             {% for pro in all %}  
+       <tr>
+     	<td><a href="{% url 'detail' pro.id %}"><img src="{{pro.movie_image.url}}" width="200px"></a></td>
+        <td>{{pro.movie_name}}</td>
+        <td>{{pro.movie_producer}}</td>
+        <td>{{pro.movie_director}}</td>
+     </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>
+{% endblock %}
