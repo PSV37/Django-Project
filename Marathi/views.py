@@ -74,3 +74,10 @@ class DeleteMovie(DeleteView):
 
   def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
+
+def addedmovie(request):
+     alldata = Movie.objects.all()
+     context = {
+       'Alldata':alldata,
+     }
+     return render(request , 'marathi/AddedMovie.html',context)            

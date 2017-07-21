@@ -1,8 +1,14 @@
 {% extends 'marathi/Admin.html' %}
 
 {% block a %}
+<style>
+.img-responsive
+{
+	height: 250px;
+}
+</style>
 <div class="container">
-  <h1>This is Detail page</h1>
+  <h1>About Detail </h1>
    <div class="row">
 	 <div class="col-sm-4 col-md-4">
        <div class="panel panel-info">
@@ -10,20 +16,11 @@
 		  <h2>{{movie.movie_name}}</h2>
 	    </div>
 	    <div class="panel-body">
-		  <img src="{{movie.movie_image.url}}" width="250px" height="300px">
+		  <img src="{{movie.movie_image.url}}" class="img-responsive" width="250px">
 
 		   <div align="right">
+		   	<span class="glyphicon glyphicon-hand-right" style="color:blue"></span>
 		     <a href="{% url 'Mdetail' %}"><input type="button" value="View Detail" class="btn btn-primary btn-sm"></a>
-               
-               <a href="{% url 'del-movie' movie.id  %}">
-		       <button type="submit" class="btn btn-danger btn-sm" />
-                  <span class="glyphicon glyphicon-trash"></span>
-               </button>
-               <a href="{% url 'up-movie' movie.id %}">
-	           <button type="submit" class="btn btn-success btn-sm" />
-                   <span class="glyphicon glyphicon-trash"></span>
-               </button></a>
-
            </div>
 	     </div>
 	    </div>

@@ -12,12 +12,15 @@ urlpatterns = [
 
     url(r'^profile/$',views.Profile, name="profile" ), 
 
-    url(r'^MovieDeatil/$',views.moviedeatil, name="Mdetail" ), 
+    url(r'^MovieDeatil/$',views.moviedeatil, name="Mdetail" ),
+
+    url(r'^AddedMovie/$',views.addedmovie,name="Amovie"), 
     
     url(r'^(?P<pk>[0-9]+)/$',views.DetailMovie.as_view(),name="detail"),
 
     url(r'^Update/(?P<pk>[0-9]+)/$',views.UpdateMovie.as_view(),name="up-movie"),   
     
     url(r'^(?P<pk>[0-9]+)delete/$',views.DeleteMovie.as_view(),name="del-movie"),
-   
+ 
+
 ]
